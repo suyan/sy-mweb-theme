@@ -1,0 +1,80 @@
+[
+   {
+      "title":"site icon",
+      "variableName":"site_icon",
+      "inputFieldHeight":22,
+      "exampleText":"64x64 png file"
+   },
+   {
+      "title":"logo path",
+      "variableName":"logo_path",
+      "inputFieldHeight":22,
+      "exampleText":"240x240"
+   },
+   {
+      "title":"weibo",
+      "variableName":"weibo_url",
+      "inputFieldHeight":22,
+      "exampleText":"your weibo url"
+   },
+   {
+      "title":"twitter",
+      "variableName":"twitter_url",
+      "inputFieldHeight":22,
+      "exampleText":"your twitter url"
+   },
+   {
+      "title":"github",
+      "variableName":"github_url",
+      "inputFieldHeight":22,
+      "exampleText":"your github url"
+   },
+   {
+      "title":"facebook",
+      "variableName":"facebook_url",
+      "inputFieldHeight":22,
+      "exampleText":"your facebook url"
+   },
+   {
+      "title":"instagram",
+      "variableName":"instagram_url",
+      "inputFieldHeight":22,
+      "exampleText":"your instagram url"
+   },
+   {
+      "title":"youtube",
+      "variableName":"youtube_url",
+      "inputFieldHeight":22,
+      "exampleText":"your youtube url"
+   },
+   {
+      "title":"disqus",
+      "variableName":"disqus_shortname",
+      "inputFieldHeight":22,
+      "exampleText":"disqus shortname"
+   },
+   {
+      "title":"linkedin",
+      "variableName":"linkedin_url",
+      "inputFieldHeight":22,
+      "exampleText":"your linkedin url"
+   },
+   {
+      "title":"email",
+      "variableName":"email_address",
+      "inputFieldHeight":22,
+      "exampleText":"your email address"
+   },
+   {
+      "title":"google analytics id",
+      "variableName":"ga_id",
+      "inputFieldHeight":22,
+      "exampleText":"google analytics id"
+   },
+   {
+      "title":"global notice html",
+      "variableName":"global_notice",
+      "inputFieldHeight":100,
+      "exampleText":"global notice html"
+   }
+]

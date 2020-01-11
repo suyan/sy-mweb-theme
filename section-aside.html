@@ -1,0 +1,85 @@
+{% if ext_logo_path %}
+<div class="mb-4">
+  <img class="rounded-circle mx-auto d-block" src="{{ ext_logo_path }}" width="128" height="128">
+</div>
+<div class="mb-2 text-center">
+  <a href="atom.xml" class="text-dark text-decoration-none mx-1">
+    <i class="fas fa-rss fa-2x"></i>
+  </a>
+  {% if ext_email_address.length %}
+    <a href="mailto:{{ ext_email_address }}" target="_blank" title="email" class="text-dark text-decoration-none mx-1">
+      <i class="far fa-envelope fa-2x"></i>
+    </a>
+  {% /if %}
+  {% if ext_instagram_url.length %}
+    <a href="{{ ext_instagram_url }}" target="_blank" title="instagram" class="text-dark text-decoration-none mx-1">
+      <i class="fab fa-instagram fa-2x"></i>
+    </a>
+  {% /if %}
+  {% if ext_linkedin_url.length %}
+    <a href="{{ ext_linkedin_url }}" target="_blank" title="linkedin" class="text-dark text-decoration-none mx-1">
+      <i class="fab fa-linkedin fa-2x"></i>
+    </a>
+  {% /if %}
+  {% if ext_youtube_url.length %}
+    <a href="{{ ext_youtube_url }}" target="_blank" title="youtube" class="text-dark text-decoration-none mx-1">
+      <i class="fab fa-youtube-square fa-2x"></i>
+    </a>
+  {% /if %}
+  {% if ext_facebook_url.length %}
+    <a href="{{ ext_facebook_url }}" target="_blank" title="facebook" class="text-dark text-decoration-none mx-1">
+      <i class="fab fa-facebook-square fa-2x"></i>
+    </a>
+  {% /if %}
+  {% if ext_github_url.length %}
+    <a href="{{ ext_github_url }}" target="_blank" title="github" class="text-dark text-decoration-none mx-1">
+      <i class="fab fa-github-square fa-2x"></i>
+    </a>
+  {% /if %}
+  {% if ext_twitter_url.length %}
+    <a href="{{ ext_twitter_url }}"  target="_blank" title="twitter" class="text-dark text-decoration-none mx-1">
+      <i class="fab fa-twitter-square fa-2x"></i>
+    </a>
+  {% /if %}
+  {% if ext_weibo_url.length %}
+    <a href="{{ ext_weibo_url }}" target="_blank" title="weibo" class="text-dark text-decoration-none mx-1">
+      <i class="fab fa-weibo fa-2x"></i>
+    </a>
+  {% /if %}
+</div>
+{% /if %}
+
+<div class="card mb-3 shadow border-0">
+  <div class="card-header bg-white border-1">
+    <h6 class="my-0">Categories</h6>
+  </div>
+  <div class="card-body">
+    <ul class="my-0 text-info">
+      {% for p in categoriesTree %}
+        <li>
+          <a href="{{ p.url }}" class="text-decoration-none text-info">{{ p.name }}</a>
+          {% if p.children.@count %} <ul class="my-0"> {% /if %}
+          {% for p2 in p.children %}
+            <li><a href="{{ p2.url }}" class="text-decoration-none text-info">{{ p2.name }}</a></li>
+          {% /for %}
+          {% if p.children.@count %} </ul> {% /if %}
+        </li>
+      {% /for %}
+    </ul>
+  </div>
+</div>
+
+<div class="card shadow border-0">
+  <div class="card-header bg-white border-1">
+    <h6 class="my-0">Tags</h6>
+  </div>
+  <div class="card-body">
+    <ul class="my-0 px-0">
+      {% for p in allTags %}
+        <a class="badge badge-light text-info" href="{{ p.url }}">
+          {{ p.name }}
+        </a> 
+      {% /for %}
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+{% for p in posts %}
+  <div class="card mb-4 shadow border-0">
+    {% if p.ext_featured_image.length %}
+      <a href="{{ p.url }}" class="text-decoration-none">
+        <img src="{{ p.ext_featured_image }}" class="card-img-top" alt="featured image" style="height: 18rem; object-fit: cover;">
+      </a>
+    {% /if %}
+    <div class="card-body">
+      <a href="{{ p.url }}" class="text-decoration-none">
+        <h4 class="card-title text-dark">{{ p.title }}</h4>
+        {% if p.ext_excerpt.length %}
+          <p class="card-text text-dark">{{ p.ext_excerpt }}</p>
+        {% /if %}
+      </a>
+      <div class="text-muted mt-2 font-italic" style="font-size: 90%;">
+        <span>{{ p.date }}</span>
+        {% if p.cats.@count %}
+          <span>发布在</span>
+        {% /if %}
+        {% for cat in p.cats %}
+          <a href="{{ cat.url }}" class="text-decoration-none text-info">
+            <span>{{ cat.name }}</span>
+          </a>
+        {% /for %}
+        <span>Tags:</span>
+        {% for tag in p.tags %}
+          <a href="{{ tag.url }}" class="text-decoration-none text-info">{{ tag.name }}</a>
+        {% /for %}
+      </div>
+    </div>
+  </div>
+{% /for %}
+<nav class="clearfix">
+  <a
+    role="button"
+    {% if prevPageUrl.length %}
+      class="btn btn-outline-info float-left"
+      href="{{ prevPageUrl }}"
+    {% else %}
+      class="btn btn-outline-secondary float-left disabled"
+      disabled
+    {% /if %}
+  >
+    &laquo; Prev Page
+  </a>
+  <a
+    role="button"
+    {% if nextPageUrl.length %}
+      class="btn btn-outline-info float-right"
+      href="{{ nextPageUrl }}"
+    {% else %}
+      class="btn btn-outline-secondary float-right disabled"
+      disabled
+    {% /if %}
+  >
+    Next Page &raquo;
+  </a>
+</nav>

@@ -1,0 +1,18 @@
+<main role="main" class="container mt-4">
+  <div class="row">
+    <div class="col-md-8">
+      {% if ext_global_notice.length %}
+        {{ ext_global_notice }}
+      {% /if %}
+      {% if currentCat.name %}
+        <h3 class="pb-3 mb-4 font-italic border-bottom">
+          Category: {{ currentCat.name }}
+        </h3>
+      {% /if %}
+      <!-- include(section-post-list.html) -->
+    </div>
+    <div class="col-md-4">
+      <!-- include(section-aside.html) -->
+    </div>
+  </div>
+</main>

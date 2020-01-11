@@ -1,0 +1,31 @@
+<main class="container my-4">
+  <div class="row">
+    <div class="col-md-8">
+      <h1 class="my-3 text-center">Archives</h1>
+      {% for p in posts %}
+        {% if p.year.length %}
+        <h3 class="border-bottom border-bottom-1 my-3">{{ p.year }}</h3>
+        {% /if %}
+        <div class="my-2">
+          <a href="{{ p.url }}" class="text-decoration-none">
+            <h5 class="text-dark">{{ p.title }}</h5>
+          </a>
+          <div class="text-muted mt-2 font-italic" style="font-size: 90%;">
+            <span>{{ p.date }}</span>
+            {% if p.cats.@count %}<span>posted in </span>{% /if %}
+            {% for cat in p.cats %}
+              <span><a href="{{ cat.url }}" class="text-decoration-none">{{ cat.name }}</a></span>
+            {% /for %}
+            <span class="tran-tags">Tags: </span>
+            {% for tag in p.tags %}
+              <a href="{{ tag.url }}" class="text-decoration-none">#{{ tag.name }}</a>
+            {% /for %}
+          </div>
+        </div>
+      {% /for %}
+    </div>
+    <div class="col-md-4">
+      <!-- include(section-aside.html) -->
+    </div>
+  </div>
+</main>

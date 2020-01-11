@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>
+    {% if pageTitle.length %}  
+    {{ pageTitle }}
+    {% else %}
+    {{ siteName }}
+    {% /if %}
+    </title>
+    {% if ext_site_icon.length %}<link rel="shortcut icon" href="{{ext_site_icon}}" type="image/png" />{% /if %}
+    {% if post.ext_seo_keywords.length %}<meta name="keywords" content="{{post.ext_seo_keywords}}" />{% /if %}
+    {% if post.ext_seo_des.length %}<meta name="description" content="{{post.ext_seo_des}}" />{% /if %}
+    <link href="atom.xml" rel="alternate" title="{{ siteName }}" type="application/atom+xml">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="asset/css/base.css">
+    {% if post %}{% if post.chart_codeblock.length %}<link rel="stylesheet" type="text/css" href="asset/css/prism.css">{% /if %}{% /if %}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/0f29283edc.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">{{ siteName }}</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#narbartoggle" aria-controls="narbartoggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="narbartoggle">
+            <ul class="navbar-nav mr-auto">
+              {% for m in siteMenu %}
+                <li class="nav-item active">
+                  <a class="nav-link" href="{{ m.url }}" target="{{ m.target }}">{{ m.name }}</a>
+                </li>
+              {% /for %}
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>

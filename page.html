@@ -1,0 +1,23 @@
+<main class="container my-4 page-body">
+  <div class="row">
+    <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 col-md-12">
+      {% if post.ext_featured_image.length %}
+        <img src="{{ post.ext_featured_image }}" class="img-fluid rounded" alt="Featured image">
+      {% /if %}
+    </div>
+  </div>
+  <div class="row my-4">
+    <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 col-md-12">
+      <h1>{{ post.title }}</h1>
+      <article>
+        {{ post.content }}
+      </article>
+      <div class="comments-wrap">
+        {{ commentAndShareCode }}
+        {% if ext_disqus_shortname.length %}
+        <div id="disqus_thread"></div>
+        {% /if %}
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,27 @@
+img {
+  max-width: 100%;
+}
+
+a {
+  color: var(--cyan);
+}
+
+.post-body h1, .page-body h1 {
+  font-size: 2.0rem;
+}
+
+.post-body h2, .page-body h2 {
+  font-size: 1.6rem;
+}
+
+.post-body h3, .page-body h3 {
+  font-size: 1.2rem;
+}
+
+.post-body h4, .page-body h4 {
+  font-size: 1.0rem;
+}
+
+h1, h2, h3, h4, h5, h6,.h1, .h2, .h3, .h4, .h5, .h6 {
+  line-height: 1.8;
+}
